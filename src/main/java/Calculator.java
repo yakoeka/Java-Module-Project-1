@@ -54,7 +54,6 @@ public class Calculator {
             calculator.productsList.add(product);
             sum += price;
             System.out.println(String.format("Товар %s успешно добавлен", name));
-            System.out.println(String.format("Цена добавленного товара %.2f", price));
             System.out.println("Хотите ли добавить еще один товар?");
             // Очистка символа новой строки из буфера ввода
             scanner.nextLine();
