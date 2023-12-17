@@ -5,9 +5,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int guests = Calculator.getAmountOfGuests(scanner);
         Calculator calc = new Calculator(guests);
-        calc.sum = Calculator.addProductAndGetSum(calc, scanner);
+        calc.sum = calc.addProductAndGetSum(calc, scanner);
         scanner.close();
-        Calculator.printAllProducts(calc);
-        Calculator.printResultingSum(calc);
+        calc.printAllProducts(calc);
+        calc.printResultingSum(calc);
     }
 }

@@ -29,7 +29,7 @@ public class Calculator {
         return guests;
     }
 
-    static double addProductAndGetSum(Calculator calculator, Scanner scanner) {
+    double addProductAndGetSum(Calculator calculator, Scanner scanner) {
         double sum = 0;
         // Очистка символа новой строки из буфера ввода
         scanner.nextLine();
@@ -63,22 +63,16 @@ public class Calculator {
         return sum;
     }
 
-    static void printAllProducts(Calculator calculator) {
+    void printAllProducts(Calculator calculator) {
         System.out.println("Добавленные товары:");
         for (Product element : calculator.productsList) {
             System.out.println(element.name);
         }
     }
 
-    static void printResultingSum(Calculator calculator) {
+    void printResultingSum(Calculator calculator) {
         double resultSum = calculator.sum / calculator.guests;
-        int resultSumIntDiv10 = ((int) resultSum) % 10;
-        if (resultSumIntDiv10 == 1) {
-            System.out.println(String.format("%.2f рубль", resultSum));
-        } else if ((resultSumIntDiv10 >= 2)&&(resultSumIntDiv10 <= 4)) {
-            System.out.println(String.format("%.2f рубля", resultSum));
-        } else if ((resultSumIntDiv10 >= 5)&&(resultSumIntDiv10 <= 9) || resultSumIntDiv10 == 0) {
-            System.out.println(String.format("%.2f рублей", resultSum));
-        }
+        Formatter formatter = new Formatter();
+        System.out.println(String.format("%.2f %s", resultSum, formatter.getDeclension(resultSum)));
     }
 }
